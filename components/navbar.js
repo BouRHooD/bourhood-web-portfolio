@@ -1,19 +1,6 @@
 import Logo from './logo'
 import NextLink from 'next/link'
-import {
-    Container,
-    Box,
-    Link,
-    Stack,
-    Heading,
-    Flex,
-    Menu,
-    MenuItem,
-    MenuList,
-    MenuButton,
-    IconButton,
-    useColorModeValue
-} from '@chakra-ui/react'
+import { Container, Box, Link, Stack, Heading, Flex, Menu, MenuItem, MenuList, MenuButton, IconButton, useColorModeValue } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button'
 
@@ -71,23 +58,17 @@ const Navbar = props => {
                 mt={{ base: 4, md: 0 }}
                 >
                     <LinkItem href='/works' path={path}>
-                        Works
+                        Проекты
                     </LinkItem> 
 
                     <LinkItem href='/posts' path={path}>
-                        Posts
+                        Статьи
                     </LinkItem>
 
-                    <LinkItem
-                    target="_blank"
-                    href="https://github.com/craftzdog/craftzdog-homepage"
-                    path={path}
-                    display="inline-flex"
-                    alignItems="center"
-                    style={{ gap: 4 }}
-                    pl={2}
+                    <LinkItem target="_blank" path={path} display="inline-flex" alignItems="center" style={{ gap: 4 }} pl={2}
+                    href="https://github.com/bourhood/bourhood-web-portfolio"
                     >
-                    Source    
+                    Исходный код    
                     </LinkItem>
                 </Stack>
 
@@ -96,27 +77,22 @@ const Navbar = props => {
                     
                     <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
                         <Menu isLazy id="navbar-menu">
-                            <MenuButton 
-                            as={IconButton} 
-                            icon={<HamburgerIcon />} 
-                            variant="outline" 
-                            aria-label="Options"
-                            />
+                            <MenuButton as={IconButton} icon={<HamburgerIcon />} variant="outline" aria-label="Options"/>
 
                             <MenuList>
                                 <NextLink href="/" passHref>
-                                    <MenuItem as={Link}>About</MenuItem>
+                                    <MenuItem as={Link}>Обо мне</MenuItem>
                                 </NextLink>
 
                                 <NextLink href="/works" passHref>
-                                    <MenuItem as={Link}>Works</MenuItem>
+                                    <MenuItem as={Link}>Мои проекты</MenuItem>
                                 </NextLink>
 
                                 <NextLink href="/posts" passHref>
-                                    <MenuItem as={Link}>Posts</MenuItem>
+                                    <MenuItem as={Link}>Статьи</MenuItem>
                                 </NextLink>
 
-                                <MenuItem as={Link} href="https://www.craftz.dog/">View Source</MenuItem>
+                                <MenuItem as={Link} href="https://github.com/bourhood/bourhood-web-portfolio">Посмотреть исходный код</MenuItem>
                             </MenuList>
                         </Menu>
                     </Box>

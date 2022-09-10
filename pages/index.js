@@ -3,16 +3,17 @@ import NextLink from 'next/link'
 import Section from '../components/section'
 import Paragraph from "../components/paragraph"
 import Layouts from "../components/layouts/article"
-import { ChevronRightIcon } from '@chakra-ui/icons'
+import { StarIcon } from '@chakra-ui/icons'
 import { BioSection, BioYear } from "../components/bio"
 import { GridItem } from '../components/grid-item'
-import { IoLogoTwitter, IoLogoInstagram, IoLogoGithub, IoLogoDiscord } from 'react-icons/io5'
+import { IoLogoOctocat, IoLogoGithub, IoLogoDiscord, IoLogoSteam } from 'react-icons/io5'
 
-const Page = ( ) => {
+const Page = () => {
     return (
         <Layouts>
             <Container>
-                <Box borderRadius="lg" bg={useColorModeValue('whiteAplha.500', "whiteAlpha.200")} p={3} mb={6} align="Center">
+
+                <Box borderRadius="lg" bg={useColorModeValue('whiteAlpha.500', "whiteAlpha.200")} p={3} mb={5} align="Center">
                     Здравствуйте, это личный сайт разработчика из России!
                 </Box>
 
@@ -24,12 +25,35 @@ const Page = ( ) => {
                         <p align="Center"> (Просто хороший парень) </p>
                     </Box>
 
-                    <Box>
-                        <Box flexShrink={0} mt={{base: 4, md: 0}} ml={{md: 6}}>
-                            <Image display="inline-block" borderColor="whiteAlpha.800" borderWidth={2} borderStyle="solid" maxWidth="100px" borderRadius="full" src="/images/profileImageLeonovVD.jpg" alt="Profile Image"></Image>
+                    <Box align="Center">
+                        <Box flexShrink={0} mt={{base: 0, md: 0}} ml={{md: 0}}>
+                            <Image display="inline-block" borderColor="whiteAlpha.800" borderWidth={2} borderStyle="solid" maxWidth="145px" borderRadius="full" src="/images/profileImageLeonovVD.jpg" alt="Profile Image"/>
                         </Box>
                     </Box>
                 </Box>
+
+                <Section delay={0.4}>
+                    <Heading as="h3" variant="section-title"> В сети </Heading>  
+                    <List>
+                        <ListItem>
+                            <Link href="https://github.com/bourhood" target="_blank">
+                                <Button variant="ghost" colorScheme="teal" leftIcon={<Icon as={IoLogoGithub} />}>@bourhood</Button>
+                            </Link>
+                            <Link href="https://steamcommunity.com/id/bourhood" target="_blank" marginLeft="2px">
+                                <Button variant="ghost" colorScheme="teal" leftIcon={<Icon as={IoLogoSteam} />}>BØU[RH]ØØD</Button>
+                            </Link>
+                            <Link href="https://discordapp.com/users/BouRHooD#6971" target="_blank" marginLeft="2px">
+                                <Button variant="ghost" colorScheme="teal" leftIcon={<Icon as={IoLogoDiscord} />}>BouRHooD#6971</Button>
+                            </Link>
+                        </ListItem>
+
+                        <ListItem>
+                            <Link href="https://coub.com/b0urhood" target="_blank">
+                                <Button variant="ghost" colorScheme="teal" leftIcon={<Icon as={IoLogoOctocat} />}>B0uRHooD</Button>
+                            </Link>
+                        </ListItem>
+                    </List>
+                </Section>
 
                 <Section delay={0.1}>
                     <Heading as="h3" variant="section-title"> Обо мне </Heading>  
@@ -44,7 +68,7 @@ const Page = ( ) => {
                     </Paragraph>
                     <Box align="center" my={4}>
                         <NextLink href="/works" passHref scroll={false}>
-                            <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
+                            <Button leftIcon={<StarIcon />} colorScheme="teal">
                                 Мои работы
                             </Button>
                         </NextLink>
@@ -59,7 +83,10 @@ const Page = ( ) => {
                     </BioSection>
                     <BioSection>
                         <BioYear>2022</BioYear>
-                        22 года ничего не делал и вдруг получил степень бакалавра по программе &quot;Управление в технических системах&quot; в Московском Политехническом Университете
+                        22 года ничего не делал и вдруг получил степень бакалавра в Московском Политехническом Университете {<br />} 
+                        Факультет: &quot;Информационные технологии&quot; {<br />} 
+                        Направление: &quot;Управление в технических системах&quot; {<br />} 
+                        Профиль: &quot;Киберфизические системы&quot; {<br />}
                         (莫斯科理工大学技术系统管理学士学位)
                     </BioSection>
                     <BioSection>
@@ -75,16 +102,29 @@ const Page = ( ) => {
                     </Paragraph>
                 </Section>
 
-                <Section delay={0.4}>
-                    <Heading as="h3" variant="section-title"> В сети </Heading>  
-                    <List>
-                        <ListItem>
-                            <Link href="https://github.com/bourhood" target="_blank">
-                                <Button variant="ghost" colorScheme="teal" leftIcon={<Icon as={IoLogoGithub} />}>@bourhood</Button>
-                            </Link>
-                        </ListItem>
-                    </List>
+                <Section delay={0.5}>
+                    <Heading as="h3" variant="section-title"> Ключевые навыки </Heading>  
+                    <Paragraph>
+                        <Heading as="h3" variant="section-title"> Опыт разработки с использованием технологий: </Heading>
+                        <p> &bull; C#, C++, Python 3, JavaScript, PHP, VBA, PascalABC.NET; </p>
+                        <p> &bull; HTML5, CSS3, jQuery, Ajax, Selenium; </p>
+                        <p> &bull; WPF, Windows Forms; </p>
+                        <p> &bull; Arduino, STM32, Assembler; </p>
+                        <p> &bull; Keras, TensorFlow, Docker; </p>
+                        <p> &bull; MySQL, PostgreSQL, SQLite, MongoDB. </p>
+                    </Paragraph>
+                    <Paragraph>
+                        <Heading as="h1" variant="section-title"> Использую: </Heading>
+                        <p> &bull; IDE: PyCharm, Visual Studio Code, Visual Studio 2022, LabVIEW, MATLAB, Arduino IDE, Eclipse IDE for C/C++ Developers; </p>
+                        <p> &bull; Фреймворки: React, Angular, Next.js; </p>
+                        <p> &bull; Редакторы: Notepad++; </p>
+                        <p> &bull; Видео: After Effects, Premiere Pro, Filmora, Sony Vegas; </p>
+                        <p> &bull; Графика: Photoshop, Figma; </p>
+                        <p> &bull; ОС: Windows 11, Ubuntu, Raspbian; </p>
+                        <p> &bull; САПР: Autocad, Inventor. </p>
+                    </Paragraph>
                 </Section>
+
             </Container>
         </Layouts>
     )

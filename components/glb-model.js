@@ -2,13 +2,13 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { loadGLTFModel } from '../lib/model'
-import { DogSpinner, DogContainer } from './voxel-dog-loader.js'
+import { DGLModelSpinner, DGLModelContainer } from './glb-model-loader.js'
 
 function easeOutCirc(x) {
-  return Math.sqrt(1 - Math.pow(x - 1, 4))
+  return Math.sqrt(1 - Math.pow(x - 1, 5))
 }
 
-const VoxelDog = () => {
+const SceneModelGLB = () => {
   const refContainer = useRef()
   const [loading, setLoading] = useState(true)
   const refRenderer = useRef()
@@ -41,23 +41,31 @@ const VoxelDog = () => {
       container.appendChild(renderer.domElement)
       refRenderer.current = renderer
       const scene = new THREE.Scene()
-
       const target = new THREE.Vector3(-0.5, 1.2, 0)
-      const initialCameraPosition = new THREE.Vector3(
+
+      /* for the dog.glb */
+      /*const initialCameraPosition = new THREE.Vector3(
         20 * Math.sin(0.2 * Math.PI),
         10,
         20 * Math.cos(0.2 * Math.PI)
+      )*/
+      
+      /* for the galax_tea.glb */
+      const initialCameraPosition = new THREE.Vector3(
+        120 * Math.sin(0.5 * Math.PI),
+        110,
+        120 * Math.cos(0.5 * Math.PI)
       )
 
       // 640 -> 240
       // 8   -> 6
-      const scale = scH * 0.005 + 4.8
+      const scale = scH * 0.205 + 4.8
       const camera = new THREE.OrthographicCamera(
         -scale,
         scale,
         scale,
         -scale,
-        0.01,
+        0.05,
         50000
       )
       camera.position.copy(initialCameraPosition)
@@ -69,8 +77,9 @@ const VoxelDog = () => {
       const controls = new OrbitControls(camera, renderer.domElement)
       controls.autoRotate = true
       controls.target = target
+      controls.enableZoom = false
 
-      loadGLTFModel(scene, '/dog.glb', {
+      loadGLTFModel(scene, '/galax_tea.glb', {
         receiveShadow: false,
         castShadow: false
       }).then(() => {
@@ -89,7 +98,7 @@ const VoxelDog = () => {
           const p = initialCameraPosition
           const rotSpeed = -easeOutCirc(frame / 120) * Math.PI * 20
 
-          camera.position.y = 10
+          camera.position.y = 50
           camera.position.x =
             p.x * Math.cos(rotSpeed) + p.z * Math.sin(rotSpeed)
           camera.position.z =
@@ -118,8 +127,10 @@ const VoxelDog = () => {
   }, [handleWindowResize])
 
   return (
-    <DogContainer ref={refContainer}>{loading && <DogSpinner />}</DogContainer>
+    <DGLModelContainer ref={refContainer}>
+      {loading && <DGLModelSpinner />}
+    </DGLModelContainer>
   )
 }
 
-export default VoxelDog
+export default SceneModelGLB

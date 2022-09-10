@@ -3,14 +3,16 @@ import NextLink from 'next/link'
 import { Container, Box, Link, Stack, Heading, Flex, Menu, MenuItem, MenuList, MenuButton, IconButton, useColorModeValue } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button'
+import { IoLogoGithub } from 'react-icons/io5'
 
 const LinkItem = ({ href, path, target, children, ...props }) => {
     const active = path === href
-    const inactiveColor = useColorModeValue('gray.200', 'whiteAlpha.900')
+    const inactiveColor = useColorModeValue('black', 'whiteAlpha.900')
     return (
         <NextLink href={href} passHref scroll={false}>
             <Link 
             p={2} 
+            rounded="0.375rem"
             bg={active ? 'grassTeal' : undefined} 
             color={active ? '#202023' : inactiveColor}
             target={target}
@@ -57,9 +59,17 @@ const Navbar = props => {
                 flexGrow={1}
                 mt={{ base: 4, md: 0 }}
                 >
+                    <LinkItem href='/' path={path}>
+                        Главная
+                    </LinkItem> 
+
                     <LinkItem href='/works' path={path}>
                         Проекты
-                    </LinkItem> 
+                    </LinkItem>
+
+                    <LinkItem href='/achievements' path={path}>
+                        Достижения
+                    </LinkItem>
 
                     <LinkItem href='/posts' path={path}>
                         Статьи
@@ -68,7 +78,8 @@ const Navbar = props => {
                     <LinkItem target="_blank" path={path} display="inline-flex" alignItems="center" style={{ gap: 4 }} pl={2}
                     href="https://github.com/bourhood/bourhood-web-portfolio"
                     >
-                    Исходный код    
+                        <IoLogoGithub />
+                        Исходный код    
                     </LinkItem>
                 </Stack>
 
@@ -81,18 +92,22 @@ const Navbar = props => {
 
                             <MenuList>
                                 <NextLink href="/" passHref>
-                                    <MenuItem as={Link}>Обо мне</MenuItem>
+                                    <MenuItem as={Link}>Главная</MenuItem>
                                 </NextLink>
 
                                 <NextLink href="/works" passHref>
-                                    <MenuItem as={Link}>Мои проекты</MenuItem>
+                                    <MenuItem as={Link}>Проекты</MenuItem>
+                                </NextLink>
+
+                                <NextLink href="/achievements" passHref>
+                                    <MenuItem as={Link}>Достижения</MenuItem>
                                 </NextLink>
 
                                 <NextLink href="/posts" passHref>
                                     <MenuItem as={Link}>Статьи</MenuItem>
                                 </NextLink>
 
-                                <MenuItem as={Link} href="https://github.com/bourhood/bourhood-web-portfolio">Посмотреть исходный код</MenuItem>
+                                <MenuItem as={Link} href="https://github.com/bourhood/bourhood-web-portfolio">Исходный код</MenuItem>
                             </MenuList>
                         </Menu>
                     </Box>

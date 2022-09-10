@@ -13,6 +13,10 @@ Part 1 - Watch how was built this website on YouTube (Example: https://www.craft
 - [Three.js](https://threejs.org/) - 3D library for JavaScript
 - [Framer Motion](https://www.framer.com/motion/) - An animation library for React
 
+## Using
+
+- [Galaxy tea](https://sketchfab.com/3d-models/galax-tea-c3f5fc0760144f6f85ed61e67195c683) - 3D model
+
 ## Project structure
 
 ```

@@ -7,10 +7,10 @@ import habrAutocadPost from '../public/images/page_posts/habr_autocad_first_post
 import scileadRazrabotkaIntellektualnogo from '../public/images/page_posts/scilead_ru_razrabotka_intellektualnogo.jpg'
 
 const Posts = () => (
-  <Layout title="Публикации">
+  <Layout title="Достижения">
   <Container>
     <Heading as="h3" fontSize={20} mb={4}>
-      Популярные публикации
+        Достижения
     </Heading>
 
       <Section delay={0.1}>

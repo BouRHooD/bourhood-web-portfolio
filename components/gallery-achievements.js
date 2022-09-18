@@ -49,7 +49,7 @@ function SimpleGallery(props) {
                 key={props.galleryID + '-' + index}
                 rel="noreferrer"
               >
-                <img src={image.thumbnailURL} alt="" />
+                <img key={'img_' + props.galleryID + '-' + index} src={image.thumbnailURL} alt="" />
               </a>
             </Carousel.Item>
           ))}

@@ -40,13 +40,13 @@ const Navbar = props => {
             <Container 
             display="flex" 
             p={2} 
-            maxW="container.md" 
+            maxW="container.lg" 
             wrap="wrap" 
             align="center" 
             justify="space-between"
             >
-                <Flex align="center" mr={5}>
-                    <Heading as="h1" size="lg" letterSpacing={'tighter'}>
+                <Flex align="center" mr={3}>
+                    <Heading as="h1" size="md">
                         <Logo />
                     </Heading>
                 </Flex>
@@ -57,7 +57,7 @@ const Navbar = props => {
                 width={{ base: 'full', md: 'auto' }}
                 alignItems="center"
                 flexGrow={1}
-                mt={{ base: 4, md: 0 }}
+                mt={{ base: 3, md: 0 }}
                 >
                     <LinkItem href='/' path={path}>
                         Главная
@@ -65,10 +65,6 @@ const Navbar = props => {
 
                     <LinkItem href='/works' path={path}>
                         Проекты
-                    </LinkItem>
-
-                    <LinkItem href='/achievements' path={path}>
-                        Достижения
                     </LinkItem>
 
                     <LinkItem href='/posts' path={path}>
@@ -84,11 +80,11 @@ const Navbar = props => {
                 </Stack>
 
                 <Box flex={1} align='right'>
-                    <ThemeToggleButton/>
+                    <ThemeToggleButton />
                     
                     <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
                         <Menu isLazy id="navbar-menu">
-                            <MenuButton as={IconButton} icon={<HamburgerIcon />} variant="outline" aria-label="Options"/>
+                            <MenuButton as={IconButton} icon={<HamburgerIcon />} variant="outline" borderColor="gray" aria-label="Options"/>
 
                             <MenuList>
                                 <NextLink href="/" passHref>
@@ -97,10 +93,6 @@ const Navbar = props => {
 
                                 <NextLink href="/works" passHref>
                                     <MenuItem as={Link}>Проекты</MenuItem>
-                                </NextLink>
-
-                                <NextLink href="/achievements" passHref>
-                                    <MenuItem as={Link}>Достижения</MenuItem>
                                 </NextLink>
 
                                 <NextLink href="/posts" passHref>

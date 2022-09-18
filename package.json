@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev -H 0.0.0.0",
     "build": "next build",
-    "prettier": "prettier -write .",
+    "start": "next start",
+    "prettier": "prettier --write .",
     "lint": "next lint"
   },
   "keywords": [],
@@ -16,11 +17,15 @@
     "@chakra-ui/react": "^2.3.1",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
+    "better-react-carousel": "^1.1.1",
     "framer-motion": "^7.2.1",
     "next": "^12.2.5",
+    "photoswipe": "^5.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
+    "react-photoswipe-gallery": "^2.2.1",
+    "sass": "^1.54.9",
     "three": "^0.144.0"
   },
   "devDependencies": {

@@ -1,12 +1,15 @@
-import { Container, Button, Box, Heading, Image, useColorModeValue, Link, SimpleGrid, List, ListItem, Icon } from "@chakra-ui/react"
+import { Container, Button, Box, Heading, Image, Text, useColorModeValue, Link, List, ListItem, Icon } from "@chakra-ui/react"
 import NextLink from 'next/link'
 import Section from '../components/section'
 import Paragraph from "../components/paragraph"
 import Layouts from "../components/layouts/article"
-import { StarIcon } from '@chakra-ui/icons'
+import { StarIcon, ViewIcon } from '@chakra-ui/icons'
 import { BioSection, BioYear } from "../components/bio"
-import { GridItem } from '../components/grid-item'
-import { IoLogoOctocat, IoLogoGithub, IoLogoDiscord, IoLogoSteam } from 'react-icons/io5'
+import { IoLogoGithub, IoLogoDiscord, IoLogoSteam } from 'react-icons/io5'
+import GalleryAchievements from '../components/gallery-achievements'
+
+import MyLogoTelegram from '../public/images/links/MyLogoTelegram.js'
+import MyLogoCoub from '../public/images/links/MyLogoCoub.js'
 
 const Page = () => {
     return (
@@ -21,8 +24,8 @@ const Page = () => {
                     <Box flexGrow={1}>
                         <Heading as="h2" variant="page-title" align="Center"> Леонов Владислав </Heading>
                         <Heading as="h2" variant="page-title" align="Center"> BouRHooD </Heading>
-                        <p align="Center"> (Видеомонтажер / Разработчик / Дизайнер) </p>
-                        <p align="Center"> (Просто хороший парень) </p>
+                        <Text align="Center"> (Видеомонтажер / Разработчик / Дизайнер) </Text>
+                        <Text align="Center"> (Просто хороший парень) </Text>
                     </Box>
 
                     <Box align="Center">
@@ -32,12 +35,12 @@ const Page = () => {
                     </Box>
                 </Box>
 
-                <Section delay={0.4}>
+                <Section delay={0.1}>
                     <Heading as="h3" variant="section-title"> В сети </Heading>  
                     <List>
                         <ListItem>
-                            <Link href="https://github.com/bourhood" target="_blank">
-                                <Button variant="ghost" colorScheme="teal" leftIcon={<Icon as={IoLogoGithub} />}>@bourhood</Button>
+                            <Link href="https://t.me/bourhood" target="_blank">
+                                <Button variant="ghost" colorScheme="teal" leftIcon={<Icon as={MyLogoTelegram} />}>B0uRHooD</Button>
                             </Link>
                             <Link href="https://steamcommunity.com/id/bourhood" target="_blank" marginLeft="2px">
                                 <Button variant="ghost" colorScheme="teal" leftIcon={<Icon as={IoLogoSteam} />}>BØU[RH]ØØD</Button>
@@ -49,13 +52,16 @@ const Page = () => {
 
                         <ListItem>
                             <Link href="https://coub.com/b0urhood" target="_blank">
-                                <Button variant="ghost" colorScheme="teal" leftIcon={<Icon as={IoLogoOctocat} />}>B0uRHooD</Button>
+                                <Button variant="ghost" colorScheme="teal" leftIcon={<Icon as={MyLogoCoub} />}>B0uRHooD</Button>
+                            </Link>
+                            <Link href="https://github.com/bourhood" target="_blank">
+                                <Button variant="ghost" colorScheme="teal" leftIcon={<Icon as={IoLogoGithub} />}>@bourhood</Button>
                             </Link>
                         </ListItem>
                     </List>
                 </Section>
 
-                <Section delay={0.1}>
+                <Section delay={0.2}>
                     <Heading as="h3" variant="section-title"> Обо мне </Heading>  
                     <Paragraph>
                         Я, Леонов Владислав, разработчик со страстью к созданию цифровых сервисов/вещей.
@@ -66,16 +72,27 @@ const Page = () => {
                         </NextLink>
                         , который насчитывает более 1 тысячи подписчиков.
                     </Paragraph>
+
+                    <Box align="center" my={4}>
+                        <GalleryAchievements/>
+                    </Box>
+
                     <Box align="center" my={4}>
                         <NextLink href="/works" passHref scroll={false}>
                             <Button leftIcon={<StarIcon />} colorScheme="teal">
                                 Мои работы
                             </Button>
                         </NextLink>
+
+                        <NextLink href="/posts" passHref scroll={false}>
+                            <Button leftIcon={<ViewIcon />} colorScheme="teal" ml={5}>
+                                Мои статьи
+                            </Button>
+                        </NextLink>
                     </Box>
                 </Section>
 
-                <Section delay={0.1}>
+                <Section delay={0.3}>
                     <Heading as="h3" variant="section-title"> Биография </Heading>  
                     <BioSection>
                         <BioYear>2000</BioYear>
@@ -95,10 +112,10 @@ const Page = () => {
                     </BioSection>
                 </Section>
 
-                <Section delay={0.3}>
+                <Section delay={0.4}>
                     <Heading as="h3" variant="section-title"> I ♥ </Heading>  
                     <Paragraph>
-                        Senatay, Музыку, Играть на гитаре, Фотографировать, Видеоигры, Монтировать видео
+                        Senatay, Музыку, Играть на гитаре, Фотографировать, Видеоигры, Монтировать видео, Программировать
                     </Paragraph>
                 </Section>
 
@@ -106,22 +123,22 @@ const Page = () => {
                     <Heading as="h3" variant="section-title"> Ключевые навыки </Heading>  
                     <Paragraph>
                         <Heading as="h3" variant="section-title"> Опыт разработки с использованием технологий: </Heading>
-                        <p> &bull; C#, C++, Python 3, JavaScript, PHP, VBA, PascalABC.NET; </p>
-                        <p> &bull; HTML5, CSS3, jQuery, Ajax, Selenium; </p>
-                        <p> &bull; WPF, Windows Forms; </p>
-                        <p> &bull; Arduino, STM32, Assembler; </p>
-                        <p> &bull; Keras, TensorFlow, Docker; </p>
-                        <p> &bull; MySQL, PostgreSQL, SQLite, MongoDB. </p>
+                        <Text> &bull; C#, C++, Python 3, JavaScript, PHP, VBA, PascalABC.NET; </Text>
+                        <Text> &bull; HTML5, CSS3, jQuery, Ajax, Selenium; </Text>
+                        <Text> &bull; WPF, Windows Forms; </Text>
+                        <Text> &bull; Arduino, STM32, Assembler; </Text>
+                        <Text> &bull; Keras, TensorFlow, Docker; </Text>
+                        <Text> &bull; MySQL, PostgreSQL, SQLite, MongoDB. </Text>
                     </Paragraph>
                     <Paragraph>
-                        <Heading as="h1" variant="section-title"> Использую: </Heading>
-                        <p> &bull; IDE: PyCharm, Visual Studio Code, Visual Studio 2022, LabVIEW, MATLAB, Arduino IDE, Eclipse IDE for C/C++ Developers; </p>
-                        <p> &bull; Фреймворки: React, Angular, Next.js; </p>
-                        <p> &bull; Редакторы: Notepad++; </p>
-                        <p> &bull; Видео: After Effects, Premiere Pro, Filmora, Sony Vegas; </p>
-                        <p> &bull; Графика: Photoshop, Figma; </p>
-                        <p> &bull; ОС: Windows 11, Ubuntu, Raspbian; </p>
-                        <p> &bull; САПР: Autocad, Inventor. </p>
+                        <Heading as="h3" variant="section-title"> Использую: </Heading>
+                        <Text> &bull; IDE: PyCharm, Visual Studio Code, Visual Studio 2022, LabVIEW, MATLAB, Arduino IDE, Eclipse IDE for C/C++ Developers; </Text>
+                        <Text> &bull; Фреймворки: React, Angular, Next.js; </Text>
+                        <Text> &bull; Редакторы: Notepad++; </Text>
+                        <Text> &bull; Видео: After Effects, Premiere Pro, Filmora, Sony Vegas; </Text>
+                        <Text> &bull; Графика: Photoshop, Figma; </Text>
+                        <Text> &bull; ОС: Windows 11, Ubuntu, Raspbian; </Text>
+                        <Text> &bull; САПР: Autocad, Inventor. </Text>
                     </Paragraph>
                 </Section>
 

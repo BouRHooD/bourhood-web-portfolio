@@ -4,7 +4,9 @@
 
 ## Created based on
 
-Part 1 - Watch how was built this website on YouTube (Example: https://www.craftz.dog/): [YouTube thumbnail](https://www.youtube.com/watch?v=bSMZgXzC9AA)
+Part 1 - Watch how was built this website on YouTube: [YouTube thumbnail](https://www.youtube.com/watch?v=bSMZgXzC9AA)
+Part 2 - Photo galery with carousel: [better-react-carousel](https://github.com/devpanther/better-react-carousel)
+Part 3 - Photo galery with carousel slider: [photoswipe](https://photoswipe.com/getting-started/)
 
 ## Stack
 
@@ -29,4 +31,10 @@ $PROJECT_ROOT
 ├── lib
 │   # Static files for images and 3d model file
 └── public
+```
+
+##  Useful to know
+
+```
+https://stackoverflow.com/questions/71706064/react-18-hydration-failed-because-the-initial-ui-does-not-match-what-was-render
 ```

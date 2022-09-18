@@ -11,6 +11,7 @@ export const DGLModelSpinner = () => (
     mt="calc(0px - var(--spinner-size))"
   />
 )
+DGLModelSpinner.displayName = '_DGLModelSpinner';
 
 export const DGLModelContainer = forwardRef(({ children }, ref) => (
   <Box
@@ -26,6 +27,7 @@ export const DGLModelContainer = forwardRef(({ children }, ref) => (
     {children}
   </Box>
 ))
+DGLModelContainer.displayName = '_DGLModelContainer';
 
 const Loader = () => {
   return (
@@ -34,5 +36,6 @@ const Loader = () => {
     </DGLModelContainer>
   )
 }
+Loader.displayName = '_LoaderGLB';
 
 export default Loader

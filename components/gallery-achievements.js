@@ -7,7 +7,7 @@ import ArrowButton from "./layouts/ArrowButton"
 
 const imagesAchievements = ImportAllImagesAchivements();
 function ImportAllImagesAchivements() {
-  const _require = require.context('../public/images/gallery_achievements/', false, /\.(jpg)$/)
+  const _require = require.context('../public/images/gallery_achievements/', false, /\.(jpg)$/, )
   const _imagesAchievements = _require.keys().map(_require)
   return _imagesAchievements.map((imgSrc) => (
     {
@@ -41,15 +41,15 @@ function SimpleGallery(props) {
       <div className="pswp-gallery" id={props.galleryType}>
         <Carousel cols={5} rows={1} gap={5} loop={true} arrowLeft={<ArrowButton hidden={over} type="prev"/>} arrowRight={<ArrowButton hidden={over} type="next"/>}>
           {props.images.map((image, index) => (
-            <Carousel.Item>
+            <Carousel.Item key={'Carousel.Item_' + props.galleryID + '-' + index}>
               <a
                 href={image.largeURL}
                 data-pswp-width={image.width}
                 data-pswp-height={image.height}
-                key={props.galleryID + '-' + index}
+                key={'a_' + props.galleryID + '-' + index}
                 rel="noreferrer"
               >
-                <img key={'img_' + props.galleryID + '-' + index} src={image.thumbnailURL} alt="" />
+                <img src={image.thumbnailURL} alt="" />
               </a>
             </Carousel.Item>
           ))}

@@ -16,5 +16,6 @@ const Website = ({ Component, pageProps, router}) => {
         </ChakraProvider>
     )
 }
+Website.displayName = 'BouRHooD_WebPortfolio';
 
 export default Website

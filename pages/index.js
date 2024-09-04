@@ -107,8 +107,12 @@ const Page = () => {
                         (莫斯科理工大学技术系统管理学士学位)
                     </BioSection>
                     <BioSection>
-                        <BioYear>С 2021 ~</BioYear>
-                        Работаю программистом в проектной организации АО &quot;ИнжПроектСервис&quot;! Russia (加入Injprojectservice)
+                        <BioYear>С 2021 ДО 2023</BioYear>
+                        Работал программистом в проектной организации АО &quot;ИнжПроектСервис&quot;! Russia (IPS套件)
+                    </BioSection>
+                    <BioSection>
+                        <BioYear>С 2023 ~</BioYear>
+                        Работаю программистом в организации ООО &quot;НАНОСОФТ РАЗРАБОТКА&quot;! Russia (NANOCAD开发)
                     </BioSection>
                 </Section>
 
